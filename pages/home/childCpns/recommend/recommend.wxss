@@ -1,0 +1,12 @@
+/* pages/home/childCpns/recommend/recommend.wxss */
+.recommends {
+  display: flex;
+  border-bottom: 16rpx solid #eee;
+}
+.recommends-item {
+  flex: 1;
+}
+.recommends-item image {
+  width: 160rpx;
+  height: 160rpx;
+}

@@ -1,0 +1,47 @@
+/* pages/home/childCpns/goods-list/godds-list.wxss */
+.image-content {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  padding: 2px;
+}
+.image-item {
+  width: 48%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.image {
+  border-radius: 5px;
+  width: 100%;
+}
+.goods-info {
+  text-align: center;
+  font-size: 12px;
+}
+.goods-title {
+  font-size: 12px;
+  white-space: nowrap;
+  color: #666666;
+}
+.goods-price {
+  color: #ff5777;
+}
+.goods-collect-image {
+  width: 14px;
+  height: 14px;
+  position: relative;
+  top: 7rpx;
+  padding: 0 6rpx 0 10rpx;
+}
+/* .goods-collect {
+  position: relative;
+} */
+/* .goods-collect::before {
+  content: '';
+  position: absolute;
+  left: -15px;
+  top: -1px;
+  width: 14px;
+  height: 14px;
+  background: url('/assets/images/common/favor.png') 0 0/14px 14px;
+} */

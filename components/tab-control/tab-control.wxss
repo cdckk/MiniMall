@@ -1,0 +1,14 @@
+/* components/tab-control/tab-control.wxss */
+.tab-control {
+  display: flex;
+  justify-content: space-around;
+}
+
+.tab-item {
+  color: #666666;
+}
+
+.active {
+  color: #ff5777;
+  border-bottom: 3px solid #ff5777;
+}

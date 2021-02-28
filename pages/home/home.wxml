@@ -1,0 +1,18 @@
+<!--pages/home/home.wxml-->
+<!-- 轮播图抽离成自定义组件 -->
+<swiper banners="{{banners}}"></swiper>
+
+<!-- 推荐图抽离成自定义组件 -->
+<recommend recommends="{{recommends}}"></recommend>
+
+<view class="pop-image">
+  <image src="../../assets/images/home/recommend_bg.jpg" mode="widthFix"></image>
+</view>
+
+<!-- tab-control抽离成自定义组件 -->
+<tab-control title="{{['流行','新款','精选']}}"
+            id="tab-control"
+            bind:myevent="handleMyEvent"></tab-control>
+
+<goods-list goodsList="{{list}}"
+            ></goods-list>
