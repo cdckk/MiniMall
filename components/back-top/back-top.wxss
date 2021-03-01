@@ -1,0 +1,6 @@
+/* components/back-top/back-top.wxss */
+.back-top {
+  position: fixed;
+  right: 20rpx;
+  bottom: 20rpx;
+}

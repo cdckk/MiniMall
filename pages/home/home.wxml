@@ -14,5 +14,5 @@
             id="tab-control"
             bind:myevent="handleMyEvent"></tab-control>
 
-<goods-list goodsList="{{list}}"
+<goods-list goodsList="{{goods[type].list}}"
             ></goods-list>

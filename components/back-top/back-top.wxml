@@ -1,0 +1,3 @@
+<!--components/back-top/back-top.wxml-->
+<image src="../../assets/images/common/top.png"
+      class="back-top"></image>

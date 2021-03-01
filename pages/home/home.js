@@ -1,5 +1,7 @@
 // pages/home/home.js
 import {getGoodsdata, getMultidata} from '../../service/home'
+
+const types = ['pop','new','sell']
 Page({
 
   /**
@@ -9,10 +11,12 @@ Page({
     banners: [],
     recommends: [],
     type: 'pop',
-    page: 1,
-    data: {},
     currentIndex: 0,
-    list: []
+    goods: {
+      'pop': { page: 0, list: []},
+      'new': { page: 0, list: []},
+      'sell': { page: 0, list: []}
+    }
   },
 
   /**
@@ -37,56 +41,52 @@ Page({
     })
 
     //请求首页商品数据
-    // getGoodsdata(this.data.data).then(res => {
-    //   console.log(res)
-    // })
-    
-    this._getGoodsdata()
+    this._getGoodsdata('pop')
+    this._getGoodsdata('new')
+    this._getGoodsdata('sell')
   },
 
   handleMyEvent(event) {
     console.log('事件对象',event)
     const currentTitle = event.detail.title;
     const currentIndex = event.detail.index;
-    this.data.type = currentTitle;
-    this.data.currentIndex = currentIndex;
-    this.setData({
-      // type: currentTitle,
-      data:{
-        type: this.data.type,
-        page: this.data.page
-      }
-    })
-    this._getGoodsdata()
-  },
-
-  _getGoodsdata() { 
-    //请求首页商品数据
     
-    switch (this.data.currentIndex) {
+    // const type = types[currentIndex];
+    // this.setData({
+    //   type: type
+    // })
+    switch (currentIndex) {
       case 0: 
-          this.data.type = 'pop'; break;
+        this.setData({
+          type: 'pop'
+        }); break;
       case 1: 
-          this.data.type = 'new'; break;
+        this.setData({
+          type: 'new'
+        }); break;
       case 2:
-          this.data.type = 'sell'; break;
+        this.setData({
+          type: 'sell'
+        }); break;
       default:
         break;
     }
+  },
 
-    this.data.data = {
-      type: this.data.type,
-      page: this.data.page
-    }
-    console.log("数据", this.data.data);
-
-    //发请求
-    getGoodsdata(this.data.data).then(res => {
+  _getGoodsdata(type) { 
+    //请求首页商品数据
+    const page = this.data.goods[type].page + 1;
+    getGoodsdata(type, page).then(res => {
       console.log(res)
+      const list = res.data.data.list;
+      const oldList = this.data.goods[type].list;
+      oldList.push(...list);
+      const typeKey = `goods.${type}.list`;
+      const pageKey = `goods.${page}.list`
       this.setData({
-        list: res.data.data.list
+        [typeKey]: oldList,
+        [pageKey]: page
       })
-      // this.data.list = res.data.data.list;
     })
   },
 
@@ -142,6 +142,6 @@ Page({
   //监听页面滚动到底部
   onReachBottom() {
     console.log('页面滚动到底部')
-    this._getGoodsdata()
+    this._getGoodsdata(this.data.type)
   }
 })

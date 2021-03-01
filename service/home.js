@@ -7,13 +7,16 @@ export function getMultidata () {
 };
 
 //请求首页商品数据
-export function getGoodsdata (data) {
+export function getGoodsdata (type, page) {
   return request({
     url: 'http://152.136.185.210:7878/api/m5/home/data',
     // data: {
     //   type: 'pop',
     //   page: 1
     // }
-    data: data
+    data: {
+      type,
+      page
+    }
   })
 }
