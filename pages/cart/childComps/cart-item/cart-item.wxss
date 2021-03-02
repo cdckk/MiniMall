@@ -1,0 +1,38 @@
+/* pages/cart/childComps/cart-item/cart-item.wxss */
+.cart-item {
+  display: flex;
+  border-bottom: 1px solid #ccc;
+  padding: 10px;
+  width: 100%;
+}
+.cart-image {
+  width: 160rpx;
+  height: 200rpx;
+  border-radius: 5rpx;
+}
+.goods-info {
+  flex: 2;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.cart-desc {
+  margin-top: 30rpx;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-size: 28rpx;
+  color: #666;
+}
+.cart-title {
+  font-size: 34rpx;
+  color: #333;
+}
+.cart-info-bottom {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 60rpx;
+}
+.cart-price {
+  color: orangered;
+}

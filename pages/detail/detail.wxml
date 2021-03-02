@@ -3,7 +3,7 @@
         banners="{{topImages}}">
 </swiper>
 
-<view class="desc">{{desc}}</view>
+<view class="desc">{{title}}</view>
 
 <view class="columns">
   <block wx:for="{{columns}}" wx:key="index">
@@ -19,4 +19,4 @@
   </block>
 </view>
 
-<detail-bottom-bar></detail-bottom-bar>
+<detail-bottom-bar bind:addToCart="addToCart"></detail-bottom-bar>

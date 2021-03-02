@@ -2,7 +2,8 @@
 <navigator class="image-item"
             url="/pages/detail/detail?iid={{item.iid}}">
       <image src="{{item.showLarge.img || item.image}}"
-            class="image"></image>
+            class="image"
+            mode="widthFix"></image>
       <text class="goods-title">{{item.title}}</text>
       <view class="goods-info">
         <text class="goods-price">{{item.price}}</text>

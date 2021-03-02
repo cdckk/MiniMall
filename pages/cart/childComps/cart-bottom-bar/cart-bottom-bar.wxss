@@ -1,0 +1,28 @@
+/* pages/cart/childComps/cart-bottom-bar/cart-bottom-bar.wxss */
+.cart-bottom-bar {
+  display: flex;
+  line-height: 98rpx;
+  text-align: center;
+  background-color: #f6f6f6;
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  font-size: 28rpx;
+  color: #666666;
+}
+/* .cart-bottom-bar view {
+  flex: 1;
+  text-align: center;
+} */
+.item-left {
+  flex: 1;
+}
+.item-center {
+  flex: 2;
+}
+.item-right{
+  flex: 1;
+  color: #ffffff;
+  background-color: red;
+}

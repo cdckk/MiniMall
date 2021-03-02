@@ -19,7 +19,10 @@ Component({
    */
   methods: {
     handleCartClick() {
-      console.log('加入购物车')
+      wx.showToast({
+        title: '加入购物车成功',
+      })
+      this.triggerEvent('addToCart')
     }
   }
 })

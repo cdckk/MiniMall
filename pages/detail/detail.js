@@ -1,5 +1,9 @@
 // pages/detail/detail.js
 import {getDetail} from '../../service/detail'
+
+const app = getApp()
+var cartGoods = app.cartGoods;
+
 Page({
 
   /**
@@ -8,7 +12,9 @@ Page({
   data: {
     iid: '',
     topImages: [],
+    title: '',
     desc: '',
+    price: 0,
     columns: [],
     detailImage: []
   },
@@ -32,17 +38,35 @@ Page({
       console.log('商品详情页数据',res)
       //分离数据
       const topImages = res.data.result.itemInfo.topImages;
-      const desc = res.data.result.itemInfo.title;
+      const title = res.data.result.itemInfo.title;
+      const desc = res.data.result.itemInfo.desc;
+      const price = res.data.result.itemInfo.lowNowPrice;
       const columns = res.data.result.columns;
       const imageList = res.data.result.detailInfo.detailImage;
       const detailImage = imageList[0].list;
       this.setData({
         topImages: topImages,
+        title: title,
         desc: desc,
+        price: price,
         columns: columns,
         detailImage: detailImage
       })
     })
+  },
+
+  //加入购物车
+  addToCart() {
+    const cartList = {};
+    cartList.image = this.data.topImages[0];
+    cartList.title = this.data.title;
+    cartList.desc = this.data.desc;
+    cartList.price = this.data.price;
+    // app.globalData.cartGoods = cartList;
+    app.globalData.cartGoods.push(cartList);
+    // cartGoods = cartList;
+    console.log('全局变量',app.globalData.cartGoods)
+    // console.log(cartGoods);
   },
 
   /**

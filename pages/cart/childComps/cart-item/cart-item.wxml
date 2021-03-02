@@ -1,0 +1,15 @@
+<!--pages/cart/childComps/cart-item/cart-item.wxml-->
+<view class="cart-item">
+  <view class="icon"></view>
+  <image class="cart-image"
+          src="{{cartItemList.image}}"
+          mode="widthFix"></image>
+  <view class="goods-info">
+    <text class="cart-title">{{cartItemList.title}}</text>
+    <view class="cart-desc"><text>{{cartItemList.desc}}</text></view>
+    <view class="cart-info-bottom">
+      <view class="cart-price">￥{{cartItemList.price}}</view>
+      <view>20</view>
+    </view>
+  </view>
+</view>

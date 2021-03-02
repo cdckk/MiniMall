@@ -1,0 +1,6 @@
+{
+  "component": true,
+  "usingComponents": {
+    "cart-item": "/pages/cart/childComps/cart-item/cart-item"
+  }
+}
