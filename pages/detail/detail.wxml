@@ -1,0 +1,22 @@
+<!--pages/detail/detail.wxml-->
+<swiper class="swiper"
+        banners="{{topImages}}">
+</swiper>
+
+<view class="desc">{{desc}}</view>
+
+<view class="columns">
+  <block wx:for="{{columns}}" wx:key="index">
+    <view>{{item}}</view>
+  </block>
+</view>
+
+<view>
+  <block wx:for="{{detailImage}}" wx:key="index">
+    <image src="{{item}}"
+          mode="widthFix"
+          class="detail-image"></image>
+  </block>
+</view>
+
+<detail-bottom-bar></detail-bottom-bar>

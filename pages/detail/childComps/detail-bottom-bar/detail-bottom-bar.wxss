@@ -1,0 +1,33 @@
+/* pages/detail/childComps/detail-bottom-bar/detail-bottom-bar.wxss */
+.bottom-bar {
+  display: flex;
+  height: 98rpx;
+  line-height: 98rpx;
+  text-align: center;
+  color: #666666;
+  background-color: #ffffff;
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+.bottom-bar-left {
+  flex: 1;
+  display: flex;
+}
+.bottom-bar-left view {
+  flex: 1;
+}
+.bottom-bar-right {
+  flex: 1;
+  display: flex;
+}
+.item-cart {
+  flex: 1;
+  background:yellow;
+}
+.item-sell {
+  flex: 1;
+  background:#ffc0cb;
+  color: #ffffff;
+}

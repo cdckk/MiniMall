@@ -18,6 +18,12 @@ Component({
    * 组件的方法列表
    */
   methods: {
-
+    handlePushClick() {
+      const iid = this.properties.item.iid;
+      // console.log('跳到详情页',iid)
+      wx.navigateTo({
+        url: '/pages/detail/detail?iid',
+      })
+    }
   }
 })

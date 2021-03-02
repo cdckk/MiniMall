@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "swiper": "/components/swiper/swiper",
+    "detail-bottom-bar": "/pages/detail/childComps/detail-bottom-bar/detail-bottom-bar"
+  }
+}

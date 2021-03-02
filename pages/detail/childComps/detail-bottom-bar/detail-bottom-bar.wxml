@@ -1,0 +1,13 @@
+<!--pages/detail/childComps/detail-bottom-bar/detail-bottom-bar.wxml-->
+<view class="bottom-bar">
+  <view class="bottom-bar-left">
+    <view>客服</view>
+    <view>店铺</view>
+    <view>收藏</view>
+  </view>
+  <view class="bottom-bar-right">
+    <view class="item-cart"
+          bindtap="handleCartClick">加入购物车</view>
+    <text class="item-sell">购买</text>
+  </view>
+</view>

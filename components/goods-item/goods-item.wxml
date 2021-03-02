@@ -1,5 +1,6 @@
 <!--components/goods-item/goods-item.wxml-->
-<view class="image-item">
+<navigator class="image-item"
+            url="/pages/detail/detail?iid={{item.iid}}">
       <image src="{{item.showLarge.img || item.image}}"
             class="image"></image>
       <text class="goods-title">{{item.title}}</text>
@@ -9,4 +10,4 @@
               class="goods-collect-image"></image>
         <text class="goods-collect">{{item.cfav}}</text>
       </view>
-    </view>
+</navigator>
