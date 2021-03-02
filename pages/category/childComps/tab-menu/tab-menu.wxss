@@ -1,0 +1,14 @@
+/* pages/category/childComps/tab-menu/tab-menu.wxss */
+.category-title {
+  line-height: 90rpx;
+  text-align: center;
+  width: 200rpx;
+  height: 90rpx;
+  font-size: 28rpx;
+  background-color: #f2f2f2;
+}
+.active {
+  background-color:#fff;
+  width: 200rpx;
+  height: 90rpx;
+}

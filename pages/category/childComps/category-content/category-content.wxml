@@ -1,0 +1,2 @@
+<!--pages/category/childComps/category-content/category-content.wxml-->
+<goods-list goodsList="{{categoryContentList}}"></goods-list> 

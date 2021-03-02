@@ -1,2 +1,8 @@
 <!--pages/category/category.wxml-->
-<text>pages/category/category.wxml</text>
+<view class="page-content">
+  <tab-menu categoryList="{{categoryList}}"
+          bind:tabMenuClick="tabMenuClick"></tab-menu>
+
+  <category-content categoryContentList="{{categoryContentList}}"></category-content>
+</view>
+

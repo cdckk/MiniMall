@@ -1,18 +1,36 @@
 <!--pages/home/home.wxml-->
-<!-- 轮播图抽离成自定义组件 -->
-<swiper banners="{{banners}}"></swiper>
 
-<!-- 推荐图抽离成自定义组件 -->
-<recommend recommends="{{recommends}}"></recommend>
+  <!-- tab-control抽离成自定义组件 -->
+  <tab-control class="tab-control-fixed"
+              title="{{['流行','新款','精选']}}"
+              id="tab-control"
+              bind:myevent="handleMyEvent"
+              wx:if="{{showTabControl}}"></tab-control>
 
-<view class="pop-image">
-  <image src="../../assets/images/home/recommend_bg.jpg" mode="widthFix"></image>
-</view>
+<scroll-view scroll-y="true"
+            style="height: 1070rpx"
+            bindscrolltolower="scrollBottom"
+            bindscroll="scroll"
+            scroll-top="{{topPosition}}"
+            scroll-with-animation="true">
+  <!-- 轮播图抽离成自定义组件 -->
+  <swiper banners="{{banners}}"></swiper>
 
-<!-- tab-control抽离成自定义组件 -->
-<tab-control title="{{['流行','新款','精选']}}"
-            id="tab-control"
-            bind:myevent="handleMyEvent"></tab-control>
+  <!-- 推荐图抽离成自定义组件 -->
+  <recommend recommends="{{recommends}}"></recommend>
 
-<goods-list goodsList="{{goods[type].list}}"
-            ></goods-list>
+  <view class="pop-image">
+    <image src="../../assets/images/home/recommend_bg.jpg" mode="widthFix"></image>
+  </view>
+
+  <!-- tab-control抽离成自定义组件 -->
+  <tab-control title="{{['流行','新款','精选']}}"
+              id="tab-control"
+              bind:myevent="handleMyEvent"></tab-control>
+
+  <goods-list goodsList="{{goods[type].list}}"
+              ></goods-list>
+
+  <back-top wx:if="{{isShow}}"
+            bindtap="backTopClick"></back-top>
+</scroll-view>

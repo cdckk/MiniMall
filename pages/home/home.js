@@ -16,7 +16,10 @@ Page({
       'pop': { page: 0, list: []},
       'new': { page: 0, list: []},
       'sell': { page: 0, list: []}
-    }
+    },
+    isShow: false,
+    topPosition: 0,
+    showTabControl: false
   },
 
   /**
@@ -77,7 +80,6 @@ Page({
     //请求首页商品数据
     const page = this.data.goods[type].page + 1;
     getGoodsdata(type, page).then(res => {
-      console.log(res)
       const list = res.data.data.list;
       const oldList = this.data.goods[type].list;
       oldList.push(...list);
@@ -140,8 +142,51 @@ Page({
   },
 
   //监听页面滚动到底部
-  onReachBottom() {
-    console.log('页面滚动到底部')
-    this._getGoodsdata(this.data.type)
+  // onReachBottom() {
+  //   console.log('页面滚动到底部')
+  //   this._getGoodsdata(this.data.type);
+  //   this.setData({
+  //     isShow: true
+  //   })
+  // },
+
+  //滚动底部
+  scrollBottom() {
+    //请求更多商品数据
+    this._getGoodsdata(this.data.type);
+    // this.setData({
+    //   isShow: true
+    // })
+  },
+
+  //监听滚动
+  scroll(e) {
+    const scrollTop = 500;
+    if(e.detail.scrollTop >= scrollTop) {
+      this.setData({
+        isShow: true,
+        showTabControl: true
+      })
+    }else {
+      this.setData({
+        isShow: false,
+        showTabControl: false
+      })
+    }
+
+    // e.detail.scrollTop >= scrollTop ? this.setData({
+    //   isShow: true,
+    //   showTabControl: true
+    // }) : this.setData({
+    //   isShow: false,
+    //   showTabControl: false
+    // })
+  },
+
+  //滚到顶部方法
+  backTopClick() {
+    this.setData({
+      topPosition: 0
+    })
   }
 })

@@ -1,1 +1,4 @@
 /* pages/category/category.wxss */
+.page-content {
+  display: flex;
+}

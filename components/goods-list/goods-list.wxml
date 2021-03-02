@@ -1,0 +1,10 @@
+<!--pages/home/childCpns/goods-list/godds-list.wxml-->
+<view class="image-content">
+  <block wx:for="{{goodsList}}" wx:key="index">
+    
+      
+    <goods-item class="image-item"
+                item="{{item}}"></goods-item>
+
+  </block>
+</view>

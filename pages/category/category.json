@@ -1,4 +1,7 @@
 {
-  "usingComponents": {},
+  "usingComponents": {
+    "tab-menu": "/pages/category/childComps/tab-menu/tab-menu",
+    "category-content": "/pages/category/childComps/category-content/category-content"
+  },
   "navigationBarTitleText": "商品分类"
 }

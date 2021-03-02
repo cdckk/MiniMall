@@ -1,0 +1,10 @@
+<!--pages/category/childComps/tab-menu/tab-menu.wxml-->
+<view>
+  <block wx:for="{{categoryList}}" wx:key="index">
+    <view class="category-title {{(index == currentIndex) ? 'active' : ''}}"
+          bindtap="handleClick"
+          data-index="{{index}}">
+      {{item.title}}
+    </view>
+  </block>
+</view>

@@ -1,18 +1,12 @@
-<!--pages/home/childCpns/goods-list/godds-list.wxml-->
-<view class="image-content">
-  <block wx:for="{{goodsList}}" wx:key="index">
-    <view class="image-item">
-      <image src="{{item.showLarge.img}}"
+<!--components/goods-item/goods-item.wxml-->
+<view class="image-item">
+      <image src="{{item.showLarge.img || item.image}}"
             class="image"></image>
       <text class="goods-title">{{item.title}}</text>
       <view class="goods-info">
         <text class="goods-price">{{item.price}}</text>
-        <image src="../../../../assets/images/common/collect.svg"
+        <image src="../../assets/images/common/collect.svg"
               class="goods-collect-image"></image>
         <text class="goods-collect">{{item.cfav}}</text>
       </view>
-      
     </view>
-      
-  </block>
-</view>
